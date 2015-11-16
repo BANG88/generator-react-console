@@ -117,7 +117,7 @@ var FluxGenerator = yeoman.generators.Base.extend({
         this.copy('babelrc', '.babelrc');
 
 
-        this.composeWith('console:route', {args: ['Auth']});
+        this.composeWith('react-console:route', {args: ['Auth']});
 
     }
 });
