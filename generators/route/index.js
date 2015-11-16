@@ -21,13 +21,13 @@ module.exports = yeoman.generators.Base.extend({
 
         this.template('route.js', 'src/routes/' + this.capitalizeName + '/index.js');
 
-        this.composeWith('console:component', {args: [this.name]});
+        this.composeWith('react-console:component', {args: [this.name]});
 
-        this.composeWith('console:constants', {args: [this.name]});
+        this.composeWith('react-console:constants', {args: [this.name]});
 
-        this.composeWith('console:action', {args: [this.name]});
+        this.composeWith('react-console:action', {args: [this.name]});
 
-        this.composeWith('console:store', {args: [this.name]});
+        this.composeWith('react-console:store', {args: [this.name]});
 
 
     }
