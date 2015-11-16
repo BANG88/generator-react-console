@@ -1,0 +1,32 @@
+{
+  "name": "generator-console",
+  "version": "0.0.0",
+  "description": "Yeoman generator",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "bang88/generator-react-console",
+  "author": {
+    "name": "邦",
+    "email": "yuhuidev@gmail.com",
+    "url": "https://github.com/bang88"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "lodash.capitalize": "^3.0.0",
+    "slug": "^0.9.1",
+    "yeoman-generator": "^0.19.0",
+    "yosay": "^1.0.2"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}

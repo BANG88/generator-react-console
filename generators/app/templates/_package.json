@@ -1,0 +1,18 @@
+{
+  "name": "<%= appSlug %>",
+  "version": "0.0.1",
+  "description": "<%= appName %>: <%= appDesc %>",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "clean": "node scripts/clean.js",
+    "asset": "node scripts/asset.js",
+    "build": "npm run clean; npm run asset;NODE_ENV=production node scripts/build.js"
+  },
+  "src": "src",
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
