@@ -3,36 +3,18 @@
 
 > <%= appDesc %>
 
-## Running your project
+## usage
 
-The generated project includes a live-reloading static server on port `8080` (you can change the port in the `gulpfile.js` config), which will build, launch, and rebuild the app whenever you change application code. To start the server, run:
+- `yo react-console appName` 初始化项目
+- `yo react-console route routeName` 创建路由(会自动创建相关的 Action constants Store, 二级路由除外)
+- `yo react-console action actionName` 创建 Action
+- `yo react-console store storeName` 创建 Store
 
-```bash
-$ npm start
+
+```js
+
+npm start 
+
 ```
 
-If you prefer to just build without the live reload and build-on-each-change watcher, run:
-
-```bash
-$ npm run build
-```
-
-
-## Generating Additional Code
-
-You can add additional functionality to your application by invoking the subgenerators included in the Flux Generator. You can add components using the following commands:
-
-#### Components
-```bash
-$ yo flux:component ComponentName
-```
-
-#### Actions
-```bash
-$ yo flux:action ActionCreatorName
-```
-
-#### Stores
-```bash
-$ yo flux:store StoreName
-```
+开启本地服务器
