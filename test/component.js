@@ -6,15 +6,17 @@ var helpers = require('yeoman-generator').test;
 
 describe('ReactConsole:generators/component', function () {
   before(function (done) {
-    helpers.run(path.join(__dirname, '../generators/component'))
+    helpers.testDirectory(path.join(__dirname, './tmp'), function () {
+      helpers.run(path.join(__dirname, '../generators/component'))
       .withArguments('name')
       .withOptions({ skipInstall: true, force: true })
       .on('end', done);
-  });
+    });
+  })
 
-  it('creates files', function () {
+  it('create component file', function () {
     assert.file([
-      'component.jsx'
+      'routes/Name/components/Name.jsx'
     ]);
   });
 });

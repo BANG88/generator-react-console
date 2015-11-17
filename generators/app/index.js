@@ -21,8 +21,7 @@ var FluxGenerator = yeoman.generators.Base.extend({
     askFor: function () {
         var done = this.async();
 
-        // Have Yeoman greet the user.
-        this.log(yosay('Welcome to the marvelous Flux/React generator!'));
+        this.log(yosay('欢迎使用react-console 脚手架!'));
 
         var prompts = [{
             type: 'string',

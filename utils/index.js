@@ -5,31 +5,64 @@ var capitalize = require('lodash.capitalize');
 
 module.exports = {
 
-    /**
-     * 创建常用的名字
-     * @param generator
-     */
-    makeCommonName: function (generator) {
+  /**
+   * 创建常用的名字
+   * @param generator
+   */
+  makeCommonName: function (generator) {
 
-        //单词首字母大写
-        this.capitalizeName = capitalize(this.name);
-        //文件名
-        this.capitalizeFileName = capitalize(this.name) + capitalize(generator);
-        //大写字母
-        this.upperName = this.name.toUpperCase();
-        // 小写字母
-        this.lowerName = this.name.toLowerCase();
+    var names = this.name.split('/');
+    var nameCount = names.length;
 
-        this.constants = this.capitalizeName + 'Constants';
+    this.subModule = nameCount > 1;
+    //单词首字母大写
+    this.capitalizeName = capitalize(this.name);
+    //文件名
+    this.capitalizeFileName = capitalize(this.name) + capitalize(generator);
+    //大写字母
+    this.upperName = this.name.toUpperCase();
+    // 小写字母
+    this.lowerName = this.name.toLowerCase();
 
-        this.actions = this.capitalizeName + 'Actions';
+    this.constants = this.capitalizeName + 'Constants';
 
-        this.store = this.capitalizeName + 'Store';
+    this.actions = this.capitalizeName + 'Actions';
+
+    this.store = this.capitalizeName + 'Store';
 
 
-        return this
+    this.subComponents = getComponentsPath(this.capitalizeName);
+    this.subRoutes = getRoutesPath(this.capitalizeName);
+
+    function getComponentsPath(component){
+      return 'routes/' + capitalize( component ) + '/components/';
+    }
+
+    function getRoutesPath(component){
+
+      return 'routes/' + capitalize( component ) + '/';
 
     }
+
+    if(nameCount> 1){
+
+      var routes = '';
+      var len = 0;
+      this.capitalizeName = capitalize(names[nameCount - 1]);
+      while(len < names.length){
+        routes+=getRoutesPath(names[len]);
+        len++
+      }
+      this.subComponents = routes+'/components/';
+      this.subRoutes = routes;
+      this.lowerName = this.capitalizeName.toLowerCase();
+
+    }
+
+
+    return this
+
+  }
 
 };
 

@@ -17,6 +17,6 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     writing: function () {
-        this.template('component.jsx', 'src/routes/' + this.capitalizeName + '/components/' + this.capitalizeName + '.js')
+        this.template('component.jsx', 'src/' + this.subComponents +  this.capitalizeName + '.jsx')
     }
 });

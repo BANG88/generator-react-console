@@ -8,27 +8,27 @@ const <%=lowerName %> = {};
 
 const <%= capitalizeFileName %> = createStore({
 
-    getAll(){
-        return <%=lowerName %>;
-    }
+  getAll(){
+    return <%=lowerName %>;
+  },
 
-    get(id) {
-        return <%=lowerName %>[id];
-    }
+  get(id) {
+    return <%=lowerName %>[id];
+  }
 });
 
 <%= capitalizeFileName %>.dispatchToken = register(action => {
 
-    switch(action.actionType){
-        case ActionType.REQUEST_<%=upperName%>:
-            //TODO 设置值,出发事件
+  switch(action.actionType){
+          case ActionType.REQUEST_<%=upperName%>:
+                  //TODO 设置值,出发事件
             <%= capitalizeFileName %>.emitChange();
-        break;
-        default:
-        break;
-    }
+            break;
+    default:
+            break;
+  }
 
 });
 
-export default  <%= capitalizeFileName %> ;
+export default  <%= capitalizeFileName %>;
 
