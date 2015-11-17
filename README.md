@@ -35,6 +35,19 @@ Finally, initiate the generator:
 yo react-console
 ```
 
+### usage
+
+- `yo react-console route routeName` this will create ( Action constants Store expect sub route)
+- `yo react-console action actionName` create Action
+- `yo react-console store storeName` create Store
+
+
+```js
+
+npm start 
+
+```
+
 ### Getting To Know Yeoman
 
 Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
