@@ -34,28 +34,37 @@ module.exports = {
     this.subComponents = getComponentsPath(this.capitalizeName);
     this.subRoutes = getRoutesPath(this.capitalizeName);
 
-    function getComponentsPath(component){
-      return 'routes/' + capitalize( component ) + '/components/';
+    function getComponentsPath(component) {
+      return 'routes/' + capitalize(component) + '/components/';
     }
 
-    function getRoutesPath(component){
+    function getRoutesPath(component) {
 
-      return 'routes/' + capitalize( component ) + '/';
+      return 'routes/' + capitalize(component) + '/';
 
     }
 
-    if(nameCount> 1){
+    if (nameCount > 1) {
 
       var routes = '';
       var len = 0;
       this.capitalizeName = capitalize(names[nameCount - 1]);
-      while(len < names.length){
-        routes+=getRoutesPath(names[len]);
+      
+      //子路由使用root路由的action store
+      var _name = capitalize(names[0]);
+      while (len < names.length) {
+        routes += getRoutesPath(names[len]);
         len++
       }
-      this.subComponents = routes+'/components/';
+      this.subComponents = routes + '/components/';
       this.subRoutes = routes;
       this.lowerName = this.capitalizeName.toLowerCase();
+      this.constants = _name + 'Constants';
+
+      this.actions = _name + 'Actions';
+
+      this.store = _name + 'Store';
+
 
     }
 

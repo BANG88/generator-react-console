@@ -4,13 +4,14 @@ import fetch from '../utils/WebApi';
 
 
 export default {
-    get: (params)=> {
-
-        Dispatcher.dispatch({
-            actionType: ActionType.REQUEST_<%= upperName %>
-        })
-
-    }
+  get: (params) => {
+    //FIXMIE： 发送一个异步请求 
+    Dispatcher.dispatchAsync(fetch({  url: '/<%= upperName %>',  data: params }), {
+        request: ActionType.REQUEST_<%= upperName %>,
+        success: ActionType.REQUEST_<%= upperName %>_SUCCESS,
+        failure: ActionType.REQUEST_<%= upperName %>_ERROR
+      }, { params })      
+  }
 };
 
 
