@@ -34,7 +34,7 @@ export default React.createClass({
       <%=store%>.addChangeListener(this._onChange); 
   },
 
-  _onStateChange() {
+  _onChange() {
       this.setState(getState());       
   },
 
