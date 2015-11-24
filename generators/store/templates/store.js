@@ -17,7 +17,7 @@ const <%= capitalizeFileName %> = createStore({
   }
 });
 
-<%= capitalizeFileName %>.dispatchToken = register(action => {
+<%= capitalizeFileName %>.dispatchToken = Dispatcher.register(action => {
 
   switch(action.actionType){
           case ActionType.REQUEST_<%=upperName%>:
