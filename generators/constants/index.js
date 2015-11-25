@@ -15,8 +15,8 @@ module.exports = yeoman.generators.Base.extend({
 
     this.log('创建 ' + this.name + ' 常量...');
 
-    this._states = ['', '_SUCCESS', '_ERROR'];
-    this._prefix = 'REQUEST_';
+    this._states = ['', '_SUC', '_ERR'];
+    this._prefix = 'REQ_';
 
 
   },
