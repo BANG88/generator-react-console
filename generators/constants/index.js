@@ -32,7 +32,7 @@ module.exports = yeoman.generators.Base.extend({
     if (!existsFile) {
       this.template('constant.js', file)
     }
-    else if (args.length > 1) {
+    else {
 
 
       var constants = require(path.join(this.env.cwd, file));
