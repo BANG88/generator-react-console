@@ -20,7 +20,7 @@ const <%= capitalizeFileName %> = createStore({
 <%= capitalizeFileName %>.dispatchToken = Dispatcher.register(action => {
 
   switch(action.actionType){
-          case ActionType.REQUEST_<%=upperName%>:
+          case ActionType.<%=_prefix%><%=upperName%>:
                   //TODO 设置值,出发事件
             <%= capitalizeFileName %>.emitChange();
             break;

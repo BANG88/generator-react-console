@@ -13,6 +13,8 @@ module.exports = {
 
     var names = this.name.split('/');
     var nameCount = names.length;
+    this._states = ['', '_SUC', '_ERR'];
+    this._prefix = 'REQ_';
 
     this.subModule = nameCount > 1;
     //单词首字母大写
@@ -64,7 +66,7 @@ module.exports = {
       this.actions = _name + 'Actions';
 
       this.store = _name + 'Store';
- 
+
 
     }
 
