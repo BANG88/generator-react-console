@@ -64,7 +64,7 @@ module.exports = {
       this.actions = _name + 'Actions';
 
       this.store = _name + 'Store';
-
+ 
 
     }
 
