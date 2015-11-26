@@ -57,7 +57,7 @@ module.exports = yeoman.generators.Base.extend({
       });
  
       //写入文件
-      this.fs.write(file, 'module.exports = ' + JSON.stringify(constants, null, 2));
+      this.fs.write(file, 'module.exports = ' + JSON.stringify(constants, null, 2).replace(/"/g,"'"));
 
 
     }
