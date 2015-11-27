@@ -1,6 +1,6 @@
-import ActionType from '../constants/<%=constants %>';
+import * as ActionType from '../constants/<%=constants %>';
 import Dispatcher from '../dispatcher';
-import {createStore} from './BaseStore';
+import {createStore} from '../utils/BaseStore';
 
 
 
@@ -21,7 +21,7 @@ const <%= capitalizeFileName %> = createStore({
 
   switch(action.actionType){
           case ActionType.<%=_prefix%><%=upperName%>:
-                  //TODO 设置值,出发事件
+                  //TODO 设置值,触发事件
             <%= capitalizeFileName %>.emitChange();
             break;
     default:
