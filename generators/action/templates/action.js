@@ -1,4 +1,4 @@
-import ActionType from '../constants/<%=constants %>';
+import * as ActionType from '../constants/<%=constants %>';
 import Dispatcher from '../dispatcher';
 import fetch from '../utils/WebApi';
 
