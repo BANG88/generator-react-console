@@ -41,11 +41,21 @@ export default React.createClass({
   componentWillUnmount() {
       <%=store%>.removeChangeListener(this._onChange);
   },
-    
+  <% if (!subModule) { %>
+   render() {
+    //aside 用来区分左边菜单栏
+    //childComponent 传递子组件到container
+    // {...this.props} 如果要生成面包屑就需要传递route相关信息到container    
+    return (<Container aside="<%= name %>"  {...this.props} childComponent={this.props.children}>
+     <h3>Hello,<%= name %></h3>
+    </Container>);
+  }
+  <% } else { %>
+  
   render() {
     return (
       <p>Hello, <%= name %>!</p>
     );
   }
-
+ <% } %>
 });
