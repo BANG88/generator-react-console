@@ -1,6 +1,9 @@
 import React from 'react';
 import <%=actions%> from 'actions/<%=actions %>';
 import <%=store%> from 'stores/<%=store %>';
+<% if (!subModule) { %>
+import Container from 'components/Container';
+<% } %>
 
 
 

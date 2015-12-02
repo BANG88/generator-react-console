@@ -40,6 +40,7 @@ yo react-console
 - `yo react-console:route routeName` this will create ( Action constants Store expect sub route)
 - `yo react-console:action actionName` create Action
 - `yo react-console:store storeName` create Store
+- `yo react-console:component componentName` create component
 
 
 ```js
