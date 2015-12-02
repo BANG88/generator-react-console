@@ -38,11 +38,12 @@ npm link
 
 * 例子example
 
-- `yo react-console:route routeName` this will create ( Action constants Store expect sub route)
-- `yo react-console:action actionName` create Action
-- `yo react-console:store storeName` create Store
-- `yo react-console:component componentName` create component
-
+```bash
+  创建路由route：   `yo react-console:route routeName` this will create ( Action constants Store expect sub route)
+     创建action： 	 `yo react-console:action actionName` create Action
+      创建store： 	 `yo react-console:store storeName` create Store
+  创建conponent：   `yo react-console:component componentName` create component
+```
 
 
 ### Getting To Know Yeoman
