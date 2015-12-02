@@ -37,14 +37,14 @@ yo react-console
 
 ### usage
 
-- `yo react-console route routeName` this will create ( Action constants Store expect sub route)
-- `yo react-console action actionName` create Action
-- `yo react-console store storeName` create Store
+- `yo react-console:route routeName` this will create ( Action constants Store expect sub route)
+- `yo react-console:action actionName` create Action
+- `yo react-console:store storeName` create Store
 
 
 ```js
 
-npm start 
+npm link 
 
 ```
 
