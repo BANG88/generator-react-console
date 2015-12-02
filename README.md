@@ -15,27 +15,28 @@ Basically, he wears a top hat, lives in your computer, and waits for you to tell
 
 Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
 
+
+### usage
+
+* 克隆generator-react-console
+```bash
+//本地：（开发用）
+git clone git@172.19.6.123:sulky/generator-react-console.git 
+//远程仓库：
+git clone git@github.com:bang88/generator-react-console.git  
+```
+
+* 安装全局yo
 ```bash
 npm install -g yo
 ```
 
-### Yeoman Generators
-
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
-
-To install generator-react-console from npm, run:
-
+* 本地link全局npm
 ```bash
-安装本地版本：npm link 或者 安装npmjs版本： npm install -g generator-react-console
+npm link 
 ```
 
-Finally, initiate the generator:
-
-```bash
-yo react-console
-```
-
-### usage
+* 例子example
 
 - `yo react-console:route routeName` this will create ( Action constants Store expect sub route)
 - `yo react-console:action actionName` create Action
@@ -43,11 +44,6 @@ yo react-console
 - `yo react-console:component componentName` create component
 
 
-```js
-
-npm link 
-
-```
 
 ### Getting To Know Yeoman
 
