@@ -26,7 +26,7 @@ Yeoman travels light. He didn't pack any generators when he moved in. You can th
 To install generator-react-console from npm, run:
 
 ```bash
-npm install -g generator-react-console
+安装本地版本：npm link ,安装npmjs版本： npm install -g generator-react-console
 ```
 
 Finally, initiate the generator:
