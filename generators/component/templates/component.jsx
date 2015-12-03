@@ -3,6 +3,7 @@ import <%=actions%> from 'actions/<%=actions %>';
 import <%=store%> from 'stores/<%=store %>';
 <% if (!subModule) { %>
 import Container from 'components/Container';
+import MainBody from 'components/MainBody';
 <% } %>
 
 
@@ -47,11 +48,15 @@ export default React.createClass({
   <% if (!subModule) { %>
    render() {
     //aside 用来区分左边菜单栏
-    //childComponent 传递子组件到container
-    // {...this.props} 如果要生成面包屑就需要传递route相关信息到container    
-    return (<Container aside="<%= name %>"  {...this.props} childComponent={this.props.children}>
-     <h3>Hello,<%= name %></h3>
-    </Container>);
+    //childComponent 传递子组件到Container
+    // {...this.props} 如果要生成面包屑就需要传递route相关信息到MainBody 
+    return (
+      <Container aside="<%= name %>" childComponent={this.props.children}>
+        <MainBody>
+          <h3>Hello,<%= name %></h3>
+        </MainBody>
+      </Container>
+    );
   }
   <% } else { %>
   
