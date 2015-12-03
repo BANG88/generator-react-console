@@ -62,7 +62,9 @@ export default React.createClass({
   
   render() {
     return (
-      <p>Hello, <%= name %>!</p>
+      <MainBody>
+          <h3>Hello,<%= name %></h3>
+      </MainBody>
     );
   }
  <% } %>
