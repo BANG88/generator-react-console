@@ -3,9 +3,8 @@ import <%=actions%> from 'actions/<%=actions %>';
 import <%=store%> from 'stores/<%=store %>';
 <% if (!subModule) { %>
 import Container from 'components/Container';
-import MainBody from 'components/MainBody';
 <% } %>
-
+import MainBody from 'components/MainBody';
 
 
 //获取数据
