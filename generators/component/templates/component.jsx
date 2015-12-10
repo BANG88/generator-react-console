@@ -5,6 +5,10 @@ import <%=store%> from 'stores/<%=store %>';
 import Container from 'components/Container';
 <% } %>
 import MainBody from 'components/MainBody';
+<% if (includeSearchBox) { %>
+import Search from 'components/Search';
+import { Button, Row, Col, Input } from 'antd';
+<% } %>
 
 
 //获取数据
@@ -51,7 +55,16 @@ export default React.createClass({
     // {...this.props} 如果要生成面包屑就需要传递route相关信息到MainBody 
     return (
       <Container aside="<%= name %>" childComponent={this.props.children}>
-        <MainBody>
+        <MainBody <%= includeBreadcrumb ? "{...this.props}" : '' %>>
+          <% if (includeSearchBox) { %>
+          <Search>
+            <Row>
+                <Col span="6">
+                    <Input placeholder="文本框一枚" />
+                </Col>                               
+            </Row>
+          </Search>
+          <% } %>
           <h3>Hello,<%= name %></h3>
         </MainBody>
       </Container>
@@ -62,6 +75,15 @@ export default React.createClass({
   render() {
     return (
       <MainBody>
+         <% if (includeSearchBox) { %>
+          <Search>
+            <Row>
+                <Col span="6">
+                    <Input placeholder="文本框一枚" />
+                </Col>                               
+            </Row>
+          </Search>
+          <% } %>
           <h3>Hello,<%= name %></h3>
       </MainBody>
     );
