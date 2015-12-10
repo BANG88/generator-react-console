@@ -10,6 +10,9 @@ import Search from 'components/Search';
 import { Button, Row, Col, Input } from 'antd';
 <% } %>
 
+<% if (includeDataTable) { %>
+import DataTable from 'components/DataTable';
+<% } %>
 
 //获取数据
 function requestData(params){
@@ -44,7 +47,27 @@ export default React.createClass({
   _onChange() {
       this.setState(getState());       
   },
-
+  <% if (includeDataTable) { %>
+  _getColumns(){
+    let columns = [{
+            key: '0',
+            title: '测试字段',
+            dataIndex: 'id',
+            /*render(id){
+        
+                return <span>测试字段{id}</span> ;
+        
+        
+            }*/
+        }];                
+    return columns;
+  },
+  <% if (includeDataTableRowSelection) { %>
+  _handleRowSelection(){
+    
+  },
+  <% } %>
+ <% } %>
   componentWillUnmount() {
       <%=store%>.removeChangeListener(this._onChange);
   },
@@ -56,6 +79,7 @@ export default React.createClass({
     return (
       <Container aside="<%= name %>" childComponent={this.props.children}>
         <MainBody <%= includeBreadcrumb ? "{...this.props}" : '' %>>
+         <h3>Hello,<%= name %></h3>
           <% if (includeSearchBox) { %>
           <Search>
             <Row>
@@ -65,7 +89,16 @@ export default React.createClass({
             </Row>
           </Search>
           <% } %>
-          <h3>Hello,<%= name %></h3>
+         <% if (includeDataTable) { %>
+          <DataTable params={this.state.formData}
+                     url="<%= DataTableUrl %>"
+                     <% if (includeDataTableRowSelection) { %>
+                     rowSelection={this._handleRowSelection()}
+                     <% } %>
+                     bordered={true}
+                     columns={this._getColumns()}
+           />
+          <% } %>
         </MainBody>
       </Container>
     );
